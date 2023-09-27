@@ -14,13 +14,14 @@ CACHE_DIR=$2
 VENDOR_DIR="$BUILD_DIR/vendor"
 INSTALL_DIR="$VENDOR_DIR/apryse"
 CACHE_FILE="$CACHE_DIR/PDFNetC64.tar.gz"
-SWIG_TARBALL="$VENDOR_DIR/swig/swig-4.1.1.tar.gz"
-
 TARBALL_URL="http://www.pdftron.com/downloads/PDFNetC64.tar.gz"
+SWIG_TARBALL_URL="https://github.com/agustin-peluffo/heroku-ruby-apryse-sdk-buildpack/raw/main/swig/swig-4.1.1.tar.gz"
 
 echo "-----> Installing SWIG..."
 cd $CACHE_DIR
-tar xzf $SWIG_TARBALL -C "$VENDOR_DIR/swig/"| indent
+curl -L $SWIG_TARBALL_URL -o swig-4.1.1.tar.gz | indent
+mkdir -p $VENDOR_DIR/swig
+tar xzf swig-4.1.1.tar.gz -C "$VENDOR_DIR/swig/"| indent
 cd $VENDOR_DIR/swig/swig-4.1.1
 ./configure | indent
 make && make DESTDIR="$VENDOR_DIR/swig" install | indent
