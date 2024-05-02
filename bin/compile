@@ -1,11 +1,11 @@
 #!/bin/bash
 
 set -e
-set -o errexit    # always exit on error
-set -o pipefail   # don't ignore exit codes when piping output
+set -o errexit  # always exit on error
+set -o pipefail # don't ignore exit codes when piping output
 
 indent() {
-  sed -u 's/^/       /'
+	sed -u 's/^/       /'
 }
 echo "-----> Installing Apryse SDK..."
 
@@ -21,7 +21,7 @@ echo "-----> Installing SWIG..."
 cd $CACHE_DIR
 wget -nv $SWIG_TARBALL_URL | indent
 mkdir -p $VENDOR_DIR/swig
-tar xzf swig-4.1.1.tar.gz -C "$VENDOR_DIR/swig/"| indent
+tar xzf swig-4.1.1.tar.gz -C "$VENDOR_DIR/swig/" | indent
 cd $VENDOR_DIR/swig/swig-4.1.1
 ./configure | indent
 make && make DESTDIR="$VENDOR_DIR/swig" install | indent
@@ -33,7 +33,7 @@ mkdir -p $INSTALL_DIR
 cd $INSTALL_DIR
 git clone https://github.com/PDFTron/PDFNetWrappers | indent
 cd PDFNetWrappers
-git checkout 0f4806080f6ac1c30a4bee17307df7266e766838
+git checkout 71603addbdef3e5b9189088e61acd6554c78fbf0
 cd ..
 
 echo "-----> Downloading Apryse SDK Tarball..."
@@ -41,7 +41,7 @@ cd $CACHE_DIR
 wget -nv $TARBALL_URL | indent
 
 echo "-----> Extracting Tarball..."
-tar xzf PDFNetC64.tar.gz -C "$INSTALL_DIR/PDFNetWrappers/PDFNetC/"| indent
+tar xzf PDFNetC64.tar.gz -C "$INSTALL_DIR/PDFNetWrappers/PDFNetC/" | indent
 cd $INSTALL_DIR/PDFNetWrappers/PDFNetC
 mv PDFNetC64/Headers/ .
 mv PDFNetC64/Lib/ .
