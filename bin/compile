@@ -32,6 +32,9 @@ echo "-----> Cloning Wrappers Repo..."
 mkdir -p $INSTALL_DIR
 cd $INSTALL_DIR
 git clone https://github.com/PDFTron/PDFNetWrappers | indent
+cd PDFNetWrappers
+git checkout 0f4806080f6ac1c30a4bee17307df7266e766838
+cd ..
 
 echo "-----> Downloading Apryse SDK Tarball..."
 cd $CACHE_DIR
