@@ -33,7 +33,7 @@ mkdir -p $INSTALL_DIR
 cd $INSTALL_DIR
 git clone https://github.com/PDFTron/PDFNetWrappers | indent
 cd PDFNetWrappers
-git checkout 71603addbdef3e5b9189088e61acd6554c78fbf0
+git checkout 694b141934b1806d5dd2dc24a8993ae50f0abe42
 cd ..
 
 echo "-----> Downloading Apryse SDK Tarball..."
