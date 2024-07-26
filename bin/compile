@@ -54,11 +54,15 @@ cmake -D BUILD_PDFNetRuby=ON .. | indent
 make && make install | indent
 ls -la
 
+echo "-----> Symlinking into vendor folder..."
+ln -s $INSTALL_DIR/PDFWrappers/PDFNetC PDFNetC
+
 echo "-----> Cleaning up..."
 rm -rf $VENDOR_DIR/swig
 
-echo "-----> Symlinking into vendor folder..."
-ln -s $INSTALL_DIR/PDFWrappers/PDFNetC PDFNetC
+rm -rf $INSTALL_DIR/PDFNetWrappers/Build
+rm -rf $INSTALL_DIR/PDFNetWrappers/.git
+rm -rf $INSTALL_DIR/PDFNetWrappers/Samples
 
 echo "-----> Success!"
 exit 0
