@@ -63,6 +63,8 @@ rm -rf $VENDOR_DIR/swig
 rm -rf $INSTALL_DIR/PDFNetWrappers/Build
 rm -rf $INSTALL_DIR/PDFNetWrappers/.git
 rm -rf $INSTALL_DIR/PDFNetWrappers/Samples
+rm -rf $INSTALL_DIR/PDFNetWrappers/Samples
+rm -rf $INSTALL_DOR/PDFNetWrappers/PDFNetC/PDFNetC64/Samples
 
 echo "-----> Success!"
 exit 0
