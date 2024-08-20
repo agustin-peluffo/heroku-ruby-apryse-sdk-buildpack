@@ -62,10 +62,14 @@ rm -rf $VENDOR_DIR/swig
 
 rm -rf $INSTALL_DIR/PDFNetWrappers/Build
 rm -rf $INSTALL_DIR/PDFNetWrappers/.git
+
+echo "-----> Cleaning up unnecessary files..."
 rm -rf $INSTALL_DIR/PDFNetWrappers/Samples
-rm -rf $INSTALL_DIR/PDFNetWrappers/Samples
-rm -rf $INSTALL_DOR/PDFNetWrappers/PDFNetC/PDFNetC64/Samples
-rm -rf $INSTALL_DOR/PDFNetWrappers/PDFNetC/PDFNetC64/Doc
+rm -rf $INSTALL_DIR/PDFNetWrappers/PDFNetC/PDFNetC64
+rm -rf $INSTALL_DIR/PDFNetWrappers/PDFNetPHP
+rm -rf $INSTALL_DIR/PDFNetWrappers/PDFNetPython
+rm -rf $INSTALL_DIR/PDFNetWrappers/PDFTronGo
+rm -rf $INSTALL_DIR/PDFNetWrappers/jenkinsfiles
 
 echo "-----> Success!"
 exit 0
